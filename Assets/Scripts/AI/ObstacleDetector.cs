@@ -30,6 +30,10 @@ public class ObstacleDetector : Detector
             Gizmos.color = Color.red;
             foreach (Collider2D obstacleCollider in colliders)
             {
+                if (obstacleCollider == null)
+                {
+                    continue;
+                }
                 Gizmos.DrawSphere(obstacleCollider.transform.position, 0.2f);
             }
         }
