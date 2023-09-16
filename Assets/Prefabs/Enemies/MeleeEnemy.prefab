@@ -247,8 +247,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7186964082461448905}
-        m_TargetAssemblyTypeName: EnemyAttacks, Assembly-CSharp
-        m_MethodName: MeleeAttack
+        m_TargetAssemblyTypeName: MeleeAttack, Assembly-CSharp
+        m_MethodName: Attack
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -361,6 +361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e61bf0eed94ef534b801affb428af2a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aiData: {fileID: 7186964082461448909}
 --- !u!61 &7186964082461448904
 BoxCollider2D:
   m_ObjectHideFlags: 0
