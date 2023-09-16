@@ -1,9 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
 {
+    public Vector3Int LastPlayerDirection => _lastDirection;
+
     [Header("Settings")]
     [SerializeField]
     private float _moveTime = 0.1f;
@@ -11,6 +11,7 @@ public class PlayerMovements : MonoBehaviour
     private float _rayDistance = 1f;
 
     private bool _canMove = true;
+    private Vector3Int _lastDirection = Vector3Int.up;
 
     private void Update()
     {
@@ -25,8 +26,9 @@ public class PlayerMovements : MonoBehaviour
         if (movement == Vector3.zero || hit)
             return;
 
+        _lastDirection = movement;
+
         _canMove = false;
         LeanTween.move(this.gameObject, this.gameObject.transform.position + movement, _moveTime).setOnComplete(() => { _canMove = true; });
-        
     }
 }

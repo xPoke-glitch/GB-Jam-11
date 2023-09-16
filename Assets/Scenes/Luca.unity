@@ -435,7 +435,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &820833950
 BoxCollider2D:
@@ -463,6 +463,37 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &1554851463
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1554851464}
+  m_Layer: 0
+  m_Name: PlayerBulletsPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1554851464
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1554851463}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1651155339
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,6 +536,7 @@ GameObject:
   - component: {fileID: 1732296748}
   - component: {fileID: 1732296747}
   - component: {fileID: 1732296749}
+  - component: {fileID: 1732296750}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -577,7 +609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1732296749
 MonoBehaviour:
@@ -593,3 +625,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _moveTime: 0.2
   _rayDistance: 1
+--- !u!114 &1732296750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1732296746}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76529bb81c6c7924abdaa99809901509, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerMovements: {fileID: 1732296749}
+  _bullet: {fileID: -3107875711063877986, guid: 8cf9c3bb3c98a674dbf801d430a49808, type: 3}
+  _bulletParent: {fileID: 1554851464}
+  _shootCooldown: 0.3
+  _bulletSpeed: 15
