@@ -389,7 +389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _bullet: {fileID: -3107875711063877986, guid: 8cf9c3bb3c98a674dbf801d430a49808, type: 3}
   _bulletParent: {fileID: 0}
-  _bulletSpeed: 15
+  _bulletSpeed: 10
   aiData: {fileID: 6531065766779408669}
 --- !u!114 &5863807294155879423
 MonoBehaviour:
