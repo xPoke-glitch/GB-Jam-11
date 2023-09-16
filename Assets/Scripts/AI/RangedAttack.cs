@@ -30,6 +30,7 @@ public class RangedAttack : MonoBehaviour
     private Bullet BulletFactory()
     {
         GameObject bulletGo = Instantiate(_bullet.gameObject, _bulletParent);
+        bulletGo.tag = "EnemyBullet";
         return bulletGo.GetComponent<Bullet>();
     }
 

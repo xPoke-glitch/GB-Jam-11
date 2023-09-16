@@ -143,6 +143,7 @@ GameObject:
   - component: {fileID: 7186964082461448906}
   - component: {fileID: 7186964082461448905}
   - component: {fileID: 7186964082461448904}
+  - component: {fileID: 5071468937779632030}
   m_Layer: 8
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -386,6 +387,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &5071468937779632030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186964082461449015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90a664f34aaf49f4e8b3518c4ddb70f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 1
 --- !u!1 &7186964082887592172
 GameObject:
   m_ObjectHideFlags: 0

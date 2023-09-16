@@ -48,6 +48,7 @@ public class PlayerShoot : MonoBehaviour
     private Bullet BulletFactory()
     {
         GameObject bulletGo = Instantiate(_bullet.gameObject, _bulletParent);
+        bulletGo.tag = "PlayerBullet";
         return bulletGo.GetComponent<Bullet>();
     }
 
