@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     private float _shootSpeed = 0f;
     private ObjectPool<Bullet> _currentPool;
 
-    public void Shoot(Vector3 startPosition, Vector3Int direction, float shootSpeed, ObjectPool<Bullet> currentPool = null)
+    public void Shoot(Vector3 startPosition, Vector3 direction, float shootSpeed, ObjectPool<Bullet> currentPool = null)
     {
         _currentPool = currentPool;
         _direction = direction;
@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
         transform.Translate(_direction * _shootSpeed * Time.deltaTime, Space.World);
     }
 
-    private Quaternion RotateTo(Vector3Int direction)
+    private Quaternion RotateTo(Vector3 direction)
     {
         float angle = Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
         if (direction.y != 0 && direction.x != 0)
