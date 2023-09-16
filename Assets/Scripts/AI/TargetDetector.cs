@@ -8,7 +8,7 @@ public class TargetDetector : Detector
     private float targetDetectionRange = 5;
 
     [SerializeField]
-    private LayerMask obstaclesLayerMask, playerLayerMask;
+    private LayerMask obstaclesLayerMask, playerLayerMask, enemyLayerMask;
 
     [SerializeField]
     private bool showGizmos = false;
@@ -24,13 +24,37 @@ public class TargetDetector : Detector
 
         if (playerCollider != null)
         {
+
             //Check if you see the player
             Vector2 direction = (playerCollider.transform.position - transform.position).normalized;
             RaycastHit2D hit =
                 Physics2D.Raycast(transform.position, direction, targetDetectionRange, obstaclesLayerMask);
+            RaycastHit2D[] hitEnemies =
+                Physics2D.RaycastAll(transform.position, direction, targetDetectionRange, enemyLayerMask);
 
+            bool isHittingEnemy = false;
+            foreach(RaycastHit2D hitEnemy in hitEnemies)
+            {
+                if(hitEnemy.collider.gameObject != this.gameObject)
+                {
+                    if(hitEnemy.collider.gameObject.transform.position == transform.position)
+                    {
+                        Debug.Log("Overlap");
+                        // move random
+                        int index = Random.Range(0, 8);
+                        if (hit.collider != null)
+                        {
+                            this.gameObject.GetComponent<EnemyMovments>().Move(Directions.eightDirections[index]);
+                        }
+                       
+                    }
+                    isHittingEnemy = true;
+                }
+            }
+            
+            /*
             //Make sure that the collider we see is on the "Player" layer
-            if (hit.collider != null && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
+            if (hit.collider != null && !isHittingEnemy && (playerLayerMask & (1 << hit.collider.gameObject.layer)) != 0)
             {
                 Debug.DrawRay(transform.position, direction * targetDetectionRange, Color.magenta);
                 colliders = new List<Transform>() { playerCollider.transform };
@@ -38,7 +62,8 @@ public class TargetDetector : Detector
             else
             {
                 colliders = null;
-            }
+            }*/
+             colliders = new List<Transform>() { playerCollider.transform };
         }
         else
         {

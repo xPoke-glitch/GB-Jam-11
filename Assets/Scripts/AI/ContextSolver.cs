@@ -57,7 +57,6 @@ public class ContextSolver : MonoBehaviour
 
         outputDirection.Normalize();
         resultDirection = outputDirection;
-
         //return the selected movement direction
         return resultDirection;
     }
