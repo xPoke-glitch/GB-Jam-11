@@ -2,9 +2,18 @@ using UnityEngine;
 
 public class Enemy : Actor
 {
+    private ObjectPool<Enemy> _pool;
+
+    public void SetupEnemy(Vector3 position, Quaternion rotation, ObjectPool<Enemy> ownPool)
+    {
+        _pool = ownPool;
+        transform.position = position;
+        transform.rotation = rotation;
+    }
+
     public override void Die()
     {
-        Destroy(gameObject);
+        _pool.ReturnObject(this);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

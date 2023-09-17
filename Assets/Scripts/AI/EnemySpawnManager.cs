@@ -12,6 +12,22 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField]
     private float _spawnTime = 5.0f;
 
+    [Header("Pool references")]
+    [SerializeField]
+    private Transform _rangedEnemyParent;
+    [SerializeField]
+    private Transform _meleeEnemyParent;
+
+    private ObjectPool<Enemy> _rangedPool;
+    private ObjectPool<Enemy> _meleePool;
+
+    private void Awake()
+    {
+        _rangedPool = new ObjectPool<Enemy>(RangedEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
+        _meleePool = new ObjectPool<Enemy>(MeleeEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -39,6 +55,23 @@ public class EnemySpawnManager : MonoBehaviour
         }
 
         int randIndex = Random.Range(0,freeTiles.Count);
-        Instantiate(_enemies[Random.Range(0, 2)], new Vector3(freeTiles[randIndex].x+0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity);
+        if (Random.Range(0, 2) == 0)
+            _meleePool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _meleePool);
+        else
+            _rangedPool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _rangedPool);
     }
+
+    private Enemy RangedEnemyFactory()
+    {
+        return Instantiate(_enemies[1], _rangedEnemyParent).GetComponent<Enemy>();
+    }
+
+    private Enemy MeleeEnemyFactory()
+    {
+        return Instantiate(_enemies[0], _meleeEnemyParent).GetComponent<Enemy>();
+    }
+
+    private void TurnOnEnemy(Enemy enemy) => enemy.gameObject.SetActive(true);
+
+    private void TurnOffEnemy(Enemy enemy) => enemy.gameObject.SetActive(false);
 }
