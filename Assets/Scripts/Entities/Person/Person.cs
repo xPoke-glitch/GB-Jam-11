@@ -10,7 +10,10 @@ public class Person : MonoBehaviour
             return;
 
         if(Input.GetKeyDown(KeyCode.L) || Input.GetKey("joystick button 0"))
+        {
+            PeopleManager.Instance.RescuePerson();
             Destroy(gameObject);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
