@@ -25,9 +25,7 @@ public class PeopleManager : Singleton<PeopleManager>
 
         if (++_peopleRescued >= PeopleCount)
         {
-            // TODO WIN THE GAME
-            Debug.Log("YOU WON!");
-            GameManager.Instance.GameOver(true);
+           // All people Rescued
         }
     }
 }

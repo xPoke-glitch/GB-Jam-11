@@ -76,6 +76,8 @@ public class EnemySpawnManager : MonoBehaviour
     public void StopSpawn(bool isWin)
     {
         CancelInvoke();
+        Destroy(_rangedEnemyParent.gameObject);
+        Destroy(_meleeEnemyParent.gameObject);
     }
 
     public void SpawnEnemy()

@@ -4,7 +4,7 @@ public class Player : Actor
 {
     public override void Die()
     {
-        GameManager.Instance.GameOver(false);
+        GameManager.Instance.GameOver();
         Destroy(gameObject);
     }
 
@@ -15,5 +15,20 @@ public class Player : Actor
             // Hardcoded 1 damage
             TakeDamage(1);
         }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += HandleGameOver;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= HandleGameOver;
+    }
+
+    private void HandleGameOver(bool isWin)
+    {
+        Destroy(gameObject);
     }
 }
