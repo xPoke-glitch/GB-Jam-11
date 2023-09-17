@@ -10,11 +10,6 @@ public class UITimer : MonoBehaviour
     [SerializeField]
     private Timer _timer;
 
-    private void Start()
-    {
-        _timer.StartTimer();
-    }
-
     private void Update()
     {
         _textMesh.text = _timer.FormattedValue;

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class ShrinkManager : MonoBehaviour
+public class ShrinkManager : Singleton<ShrinkManager>
 {
     [SerializeField]
     private Tilemap _collisionTilemap;
@@ -17,7 +17,7 @@ public class ShrinkManager : MonoBehaviour
     private int _xShrinkIndex = 0;
     private int _yShrinkIndex = 0;
 
-    void Start()
+    public void StartManager()
     {
         InvokeRepeating("Shrink", 5, 5);
     }

@@ -16,7 +16,7 @@ public struct EnemyStruct
     public EnemyType Type;
 }
 
-public class EnemySpawnManager : MonoBehaviour
+public class EnemySpawnManager : Singleton<EnemySpawnManager>
 {
     [SerializeField]
     private Tilemap _tilemap;
@@ -38,13 +38,14 @@ public class EnemySpawnManager : MonoBehaviour
     private ObjectPool<Enemy> _rangedPool;
     private ObjectPool<Enemy> _meleePool;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         _rangedPool = new ObjectPool<Enemy>(RangedEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
         _meleePool = new ObjectPool<Enemy>(MeleeEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
     }
 
-    void Start()
+    public void StartManager()
     {
         foreach (EnemyStruct position in _enemiesStartPositions)
         {
@@ -60,7 +61,7 @@ public class EnemySpawnManager : MonoBehaviour
             }
         }
 
-        InvokeRepeating("SpawnEnemy",_spawnTime,_spawnTime);
+        InvokeRepeating("SpawnEnemy", _spawnTime, _spawnTime);
     }
 
     private void OnEnable()
