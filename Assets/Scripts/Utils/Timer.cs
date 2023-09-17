@@ -12,7 +12,7 @@ public class Timer : MonoBehaviour
     {
         get
         {
-            return (((int)_timerValue / 24) + "Days  " + ((int)_timerValue % 24) + "Hours");
+            return (((int)_timerValue / 60) + "H " + ((int)_timerValue % 60) + "M");
         } 
     }
 
@@ -55,5 +55,19 @@ public class Timer : MonoBehaviour
             if (_timerValue < 0)
                 OnTimerEnd?.Invoke();
         }
+    }
+
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += HandleGameOver;
+    }
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= HandleGameOver;
+    }
+
+    private void HandleGameOver(bool isWin)
+    {
+        _timerStarted = false;
     }
 }
