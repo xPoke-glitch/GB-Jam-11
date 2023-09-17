@@ -54,8 +54,8 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer != LayerMask.NameToLayer("Enemy") && gameObject.CompareTag("EnemyBullet")
-            || collision.gameObject.layer != LayerMask.NameToLayer("Player") && gameObject.CompareTag("PlayerBullet"))
+        if (!collision.CompareTag("Person") && (collision.gameObject.layer != LayerMask.NameToLayer("Enemy") && gameObject.CompareTag("EnemyBullet")
+            || collision.gameObject.layer != LayerMask.NameToLayer("Player") && gameObject.CompareTag("PlayerBullet")))
         {
             if (_currentPool != null)
                 _currentPool.ReturnObject(this);
