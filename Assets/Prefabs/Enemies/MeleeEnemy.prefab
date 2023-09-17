@@ -242,6 +242,7 @@ MonoBehaviour:
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
   attackDelay: 1
+  startAttackDelay: 0
   attackDistance: 2
   OnAttackPressed:
     m_PersistentCalls:
