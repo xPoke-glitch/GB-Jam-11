@@ -84,6 +84,9 @@ public class EnemySpawnManager : MonoBehaviour
             }
         }
 
+        if (freeTiles.Count <= 0)
+            return;
+
         int randIndex = UnityEngine.Random.Range(0,freeTiles.Count);
         if (UnityEngine.Random.Range(0, 2) == 0)
             _meleePool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _meleePool);
