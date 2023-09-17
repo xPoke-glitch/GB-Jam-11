@@ -1,7 +1,20 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+
+public enum EnemyType
+{
+    Melee,
+    Ranged
+}
+
+[Serializable]
+public struct EnemyStruct
+{
+    public Vector3 Position;
+    public EnemyType Type;
+}
 
 public class EnemySpawnManager : MonoBehaviour
 {
@@ -18,6 +31,10 @@ public class EnemySpawnManager : MonoBehaviour
     [SerializeField]
     private Transform _meleeEnemyParent;
 
+    [Header("Settings")]
+    [SerializeField]
+    private List<EnemyStruct> _enemiesStartPositions = new List<EnemyStruct>();
+
     private ObjectPool<Enemy> _rangedPool;
     private ObjectPool<Enemy> _meleePool;
 
@@ -25,12 +42,25 @@ public class EnemySpawnManager : MonoBehaviour
     {
         _rangedPool = new ObjectPool<Enemy>(RangedEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
         _meleePool = new ObjectPool<Enemy>(MeleeEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
-
     }
 
     // Start is called before the first frame update
     void Start()
     {
+        foreach (EnemyStruct position in _enemiesStartPositions)
+        {
+            switch (position.Type)
+            {
+                case EnemyType.Melee:
+                    _meleePool.GetObject().SetupEnemy(position.Position, Quaternion.identity, _meleePool);
+                    break;
+
+                case EnemyType.Ranged:
+                    _rangedPool.GetObject().SetupEnemy(position.Position, Quaternion.identity, _rangedPool);
+                    break;
+            }
+        }
+
         InvokeRepeating("SpawnEnemy",_spawnTime,_spawnTime);
     }
 
@@ -54,8 +84,8 @@ public class EnemySpawnManager : MonoBehaviour
             }
         }
 
-        int randIndex = Random.Range(0,freeTiles.Count);
-        if (Random.Range(0, 2) == 0)
+        int randIndex = UnityEngine.Random.Range(0,freeTiles.Count);
+        if (UnityEngine.Random.Range(0, 2) == 0)
             _meleePool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _meleePool);
         else
             _rangedPool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _rangedPool);
