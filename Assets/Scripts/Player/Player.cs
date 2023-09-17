@@ -6,6 +6,12 @@ public class Player : Actor
     public static event Action<int> OnHealthInit;
     public static event Action<int> OnDamageTaken;
 
+    [SerializeField]
+    private SpriteRenderer _playerSprite;
+
+
+    private bool _canTakeDamage = true;
+
     public override void Die()
     {
         GameManager.Instance.GameOver();
@@ -14,6 +20,7 @@ public class Player : Actor
 
     private void Start()
     {
+        _canTakeDamage = true;
         OnHealthInit.Invoke(Health);
     }
 
@@ -23,8 +30,30 @@ public class Player : Actor
         {
             // Hardcoded 1 damage
             TakeDamage(1);
-            UpdateHealth();
         }
+    }
+
+    public override void TakeDamage(int amount)
+    {
+        
+        if (!_canTakeDamage)
+            return;
+
+        // Player simple blink
+        _canTakeDamage = false;
+        LeanTween.value(gameObject, setSpriteAlpha, 0f, 1f, 0.30f).setOnComplete(() =>
+        {
+            _canTakeDamage = true;
+        }).setRepeat(5).setLoopPingPong();
+
+        base.TakeDamage(amount);
+
+        UpdateHealth();
+    }
+
+    private void setSpriteAlpha(float val)
+    {
+        _playerSprite.color = new Color(_playerSprite.color.r, _playerSprite.color.g, _playerSprite.color.b, val);
     }
 
     public void UpdateHealth()

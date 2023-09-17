@@ -1600,6 +1600,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 5
+  _playerSprite: {fileID: 1082890068}
 --- !u!114 &1082890065
 MonoBehaviour:
   m_ObjectHideFlags: 0

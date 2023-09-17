@@ -14,7 +14,6 @@ public class MeleeAttack : MonoBehaviour
 
         Player p = _aiData.currentTarget.GetComponent<Player>();
         p.TakeDamage(1);
-        p.UpdateHealth();   
         Debug.Log("Melee");
     }
 }
