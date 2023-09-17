@@ -12,7 +12,9 @@ public class MeleeAttack : MonoBehaviour
         if (_aiData.currentTarget == null)
             return;
 
-        _aiData.currentTarget.GetComponent<Player>().TakeDamage(1);
+        Player p = _aiData.currentTarget.GetComponent<Player>();
+        p.TakeDamage(1);
+        p.UpdateHealth();   
         Debug.Log("Melee");
     }
 }
