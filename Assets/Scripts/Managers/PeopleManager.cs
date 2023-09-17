@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class PeopleManager : Singleton<PeopleManager>
 {
@@ -21,11 +20,11 @@ public class PeopleManager : Singleton<PeopleManager>
 
     public void RescuePerson()
     {
-        OnPersonRescued?.Invoke();
-
         if (++_peopleRescued >= PeopleCount)
         {
            // All people Rescued
         }
+
+        OnPersonRescued?.Invoke();
     }
 }
