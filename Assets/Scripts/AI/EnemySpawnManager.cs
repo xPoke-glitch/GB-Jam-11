@@ -44,7 +44,6 @@ public class EnemySpawnManager : MonoBehaviour
         _meleePool = new ObjectPool<Enemy>(MeleeEnemyFactory, TurnOnEnemy, TurnOffEnemy, 10, true);
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         foreach (EnemyStruct position in _enemiesStartPositions)
@@ -64,10 +63,19 @@ public class EnemySpawnManager : MonoBehaviour
         InvokeRepeating("SpawnEnemy",_spawnTime,_spawnTime);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
-        
+        GameManager.OnGameOver += StopSpawn;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= StopSpawn;
+    }
+
+    public void StopSpawn(bool isWin)
+    {
+        CancelInvoke();
     }
 
     public void SpawnEnemy()

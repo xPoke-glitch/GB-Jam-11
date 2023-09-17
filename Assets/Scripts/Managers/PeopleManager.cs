@@ -27,6 +27,7 @@ public class PeopleManager : Singleton<PeopleManager>
         {
             // TODO WIN THE GAME
             Debug.Log("YOU WON!");
+            GameManager.Instance.GameOver(true);
         }
     }
 }

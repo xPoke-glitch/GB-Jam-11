@@ -44,6 +44,21 @@ public class ShrinkManager : MonoBehaviour
         _yShrinkIndex++;
     }
 
+    private void OnEnable()
+    {
+        GameManager.OnGameOver += StopShrink;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnGameOver -= StopShrink;
+    }
+
+    private void StopShrink(bool isWin)
+    {
+        CancelInvoke();
+    }
+
     private IEnumerator COFinalSet(Vector3Int pos)
     {
         yield return new WaitForSeconds(2);
