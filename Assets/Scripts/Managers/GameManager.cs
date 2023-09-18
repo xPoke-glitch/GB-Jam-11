@@ -25,14 +25,10 @@ public class GameManager : Singleton<GameManager>
         StartGame();
     }
 
-    public void GameOver()
+    public void GameOver(bool isPlayerDead = false)
     {
         Debug.Log("Game Over");
-        bool isWin = false;
-        if(PeopleManager.Instance.PeopleRescued >= PeopleManager.Instance.PeopleCount)
-        {
-            isWin = true;
-        }
+        bool isWin = PeopleManager.Instance.PeopleRescued >= PeopleManager.Instance.PeopleCount && !isPlayerDead;
         OnGameOver?.Invoke(isWin);
     }
 }

@@ -14,7 +14,7 @@ public class Player : Actor
 
     public override void Die()
     {
-        GameManager.Instance.GameOver();
+        GameManager.Instance.GameOver(true);
         Destroy(gameObject);
     }
 
