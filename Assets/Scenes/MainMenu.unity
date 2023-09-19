@@ -399,7 +399,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1336403630}
   m_OnClick:
     m_PersistentCalls:
@@ -429,6 +429,7 @@ GameObject:
   - component: {fileID: 1667738473}
   - component: {fileID: 1667738472}
   - component: {fileID: 1667738476}
+  - component: {fileID: 1667738477}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -534,6 +535,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startButton: {fileID: 1336403630}
   _exitButton: {fileID: 1732350282}
+  _btnHelper: {fileID: 1667738477}
+--- !u!114 &1667738477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1667738471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24660c6c28b1d484da790266d598f9d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _buttons:
+  - {fileID: 1336403632}
+  - {fileID: 1732350284}
+  _initOnStart: 0
+  _selectedColor: {r: 0.8745098, g: 0.96862745, b: 0.79607844, a: 1}
+  _defaultColor: {r: 0.02745098, g: 0.09411765, b: 0.12941177, a: 1}
 --- !u!1 &1732350280
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,7 +729,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1732350282}
   m_OnClick:
     m_PersistentCalls:

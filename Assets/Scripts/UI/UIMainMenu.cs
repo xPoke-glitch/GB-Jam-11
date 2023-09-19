@@ -10,6 +10,8 @@ public class UIMainMenu : MonoBehaviour
     private TextMeshProUGUI _startButton;
     [SerializeField]
     private TextMeshProUGUI _exitButton;
+    [SerializeField] 
+    private ButtonSelectionHelper _btnHelper;
 
     private float _time = 0.5f;
     private Color colorA1;
@@ -25,7 +27,10 @@ public class UIMainMenu : MonoBehaviour
         colorA1.a = 1;
         FadePanel.Instance.FadeOut(() =>
         {
-            LeanTween.value(this.gameObject, UpdateValueCallback, colorA0, colorA1, _time);
+            LeanTween.value(this.gameObject, UpdateValueCallback, colorA0, colorA1, _time).setOnComplete(() =>
+            {
+                _btnHelper.ForceInitButtons();
+            });
         });
     }
 
