@@ -11,6 +11,8 @@ public class GameManager : Singleton<GameManager>
     private Player player;
     [SerializeField]
     private Timer timer;
+    [SerializeField] 
+    private AudioClip _backgroudMusic;
 
     public void StartGame()
     {
@@ -18,6 +20,7 @@ public class GameManager : Singleton<GameManager>
         EnemySpawnManager.Instance.StartManager();
         player.gameObject.SetActive(true);
         timer.StartTimer();
+        AudioManager.Instance.PlayGameBackgroundMusic(_backgroudMusic, true);
     }
 
     private void Start()

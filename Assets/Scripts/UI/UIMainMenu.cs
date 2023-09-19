@@ -12,7 +12,9 @@ public class UIMainMenu : MonoBehaviour
     private TextMeshProUGUI _exitButton;
     [SerializeField] 
     private ButtonSelectionHelper _btnHelper;
-
+    [SerializeField] 
+    private AudioClip _backgroundMusic;
+    
     private float _time = 0.5f;
     private Color colorA1;
     private Color colorA0;
@@ -30,6 +32,7 @@ public class UIMainMenu : MonoBehaviour
             LeanTween.value(this.gameObject, UpdateValueCallback, colorA0, colorA1, _time).setOnComplete(() =>
             {
                 _btnHelper.ForceInitButtons();
+                AudioManager.Instance.PlayGameBackgroundMusic(_backgroundMusic, true);
             });
         });
     }

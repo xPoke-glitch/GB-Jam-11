@@ -29,7 +29,7 @@ public class AudioManager : Singleton<AudioManager>
     public void PlayAudioEffect(AudioClip audioClipToPlay)
     {
         var audioSource = FindFirstEmpty();
-        if (!_bgMusicSource)
+        if (!audioSource)
             return;
 
         audioSource.PlayOneShot(audioClipToPlay);

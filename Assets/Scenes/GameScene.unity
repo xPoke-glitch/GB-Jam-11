@@ -303,6 +303,87 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 120905435}
   m_CullTransparentMesh: 1
+--- !u!1001 &149637223
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8077518848104707235, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518848626444997, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518848676131591, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849005870055, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849013257781, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_RootOrder
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956681, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518849713956683, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_Name
+      value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8077518850096768950, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8313eb470b7df844481fa764b420cd68, type: 3}
 --- !u!1 &169951961
 GameObject:
   m_ObjectHideFlags: 0
@@ -369,7 +450,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &216886281
 GameObject:
@@ -638,7 +719,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &287660484
 PrefabInstance:
@@ -1127,6 +1208,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1913760915}
     m_Modifications:
+    - target: {fileID: 73326480568409108, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
+      propertyPath: m_text
+      value: "You forgot someone! \nTry again"
+      objectReference: {fileID: 0}
+    - target: {fileID: 73326480568409108, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
+      propertyPath: m_fontSize
+      value: 24.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 73326480568409108, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
+      propertyPath: m_margin.w
+      value: 13.470825
+      objectReference: {fileID: 0}
+    - target: {fileID: 73326480568409108, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
+      propertyPath: m_margin.y
+      value: 23.152893
+      objectReference: {fileID: 0}
     - target: {fileID: 73326480889978139, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_Name
       value: UIGameOver
@@ -3192,7 +3289,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8891367802330141459, guid: 6cc6df32b65b54a47b8533649af15c1f, type: 3}
       propertyPath: m_RootOrder
-      value: 25
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 8891367802330141459, guid: 6cc6df32b65b54a47b8533649af15c1f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3434,7 +3531,7 @@ RectTransform:
   - {fileID: 1104866414}
   - {fileID: 1930042965}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3472,6 +3569,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1082890064}
   timer: {fileID: 1171310931}
+  _backgroudMusic: {fileID: 8300000, guid: cdafdb1bba690724a9bb4f821d4c2df3, type: 3}
 --- !u!4 &1925821263
 Transform:
   m_ObjectHideFlags: 0
