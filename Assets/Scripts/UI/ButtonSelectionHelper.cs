@@ -76,6 +76,7 @@ public class ButtonSelectionHelper : MonoBehaviour
             t.color = _defaultColor;
         }
 
-        _tmProList[_curIndex].color = _selectedColor;
+        if(_tmProList != null && _tmProList.Count > _curIndex)
+            _tmProList[_curIndex].color = _selectedColor;
     }
 }

@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 7186964082461448905}
   - component: {fileID: 7186964082461448904}
   - component: {fileID: 5071468937779632030}
+  - component: {fileID: 1267740092952857385}
   m_Layer: 8
   m_Name: MeleeEnemy
   m_TagString: Untagged
@@ -242,7 +243,7 @@ MonoBehaviour:
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
   attackDelay: 1
-  startAttackDelay: 0
+  startAttackDelay: 0.5
   attackDistance: 2
   OnAttackPressed:
     m_PersistentCalls:
@@ -346,7 +347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d85dd3d76a55c46b35a93f595fb6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveTime: 0.3
+  _moveTime: 0.5
   _obstaclesMask:
     serializedVersion: 2
     m_Bits: 128
@@ -402,6 +403,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
+--- !u!58 &1267740092952857385
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7186964082461449015}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 1
 --- !u!1 &7186964082887592172
 GameObject:
   m_ObjectHideFlags: 0

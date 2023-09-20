@@ -242,6 +242,7 @@ MonoBehaviour:
   detectionDelay: 0.05
   aiUpdateDelay: 0.06
   attackDelay: 1
+  startAttackDelay: 0.5
   attackDistance: 6
   OnAttackPressed:
     m_PersistentCalls:
@@ -345,7 +346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d85dd3d76a55c46b35a93f595fb6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveTime: 0.3
+  _moveTime: 0.4
   _obstaclesMask:
     serializedVersion: 2
     m_Bits: 128
@@ -387,8 +388,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d58fd872ba62bf42816f80a80977890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bullet: {fileID: -3107875711063877986, guid: 8cf9c3bb3c98a674dbf801d430a49808, type: 3}
-  _bulletParent: {fileID: 0}
   _bulletSpeed: 10
   aiData: {fileID: 6531065766779408669}
 --- !u!114 &5863807294155879423

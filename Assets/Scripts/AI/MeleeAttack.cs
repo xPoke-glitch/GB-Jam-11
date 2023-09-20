@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,13 +8,34 @@ public class MeleeAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] private AIData _aiData;
 
+    private bool _canDealDamage = false;
+    
     public void Attack()
     {
-        if (_aiData.currentTarget == null)
+        if (_aiData.currentTarget == null || !_canDealDamage)
             return;
 
         Player p = _aiData.currentTarget.GetComponent<Player>();
         p.TakeDamage(1);
+        _canDealDamage = false;
         Debug.Log("Melee");
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) 
+            return;
+        
+        if (!_canDealDamage)
+            _canDealDamage = true;
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (!other.CompareTag("Player")) 
+            return;
+        
+        if (_canDealDamage)
+            _canDealDamage = false;
     }
 }
