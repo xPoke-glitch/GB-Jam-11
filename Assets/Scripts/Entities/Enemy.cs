@@ -3,7 +3,12 @@ using UnityEngine;
 public class Enemy : Actor
 {
     private ObjectPool<Enemy> _pool;
-
+    
+    [SerializeField] 
+    private AudioClip _damageAudio;
+    [SerializeField] 
+    private AudioClip _deathAudio;
+    
     public void SetupEnemy(Vector3 position, Quaternion rotation, ObjectPool<Enemy> ownPool)
     {
         _pool = ownPool;
@@ -14,6 +19,7 @@ public class Enemy : Actor
     public override void Die()
     {
         _pool.ReturnObject(this);
+        AudioManager.Instance.PlayAudioEffect(_deathAudio);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -22,6 +28,7 @@ public class Enemy : Actor
         {
             // Hardcoded 1 damage
             TakeDamage(1);
+            AudioManager.Instance.PlayAudioEffect(_damageAudio);
         }
     }
 }

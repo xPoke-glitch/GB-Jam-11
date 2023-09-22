@@ -1833,6 +1833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 5
   _playerSprite: {fileID: 1082890068}
+  _damageAudio: {fileID: 8300000, guid: 25a445a8419fa1849a41d588d9c4dc95, type: 3}
 --- !u!114 &1082890065
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1850,6 +1851,9 @@ MonoBehaviour:
   _bulletParent: {fileID: 699809574}
   _shootCooldown: 0.3
   _bulletSpeed: 15
+  _shotAudio:
+  - {fileID: 8300000, guid: 9179bbf16f703714ab2f11dceddc9b2e, type: 3}
+  - {fileID: 8300000, guid: 0f5d5bfa05e18024bb85c0b2b7f99a67, type: 3}
 --- !u!61 &1082890066
 BoxCollider2D:
   m_ObjectHideFlags: 0

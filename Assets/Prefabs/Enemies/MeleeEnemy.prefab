@@ -364,6 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _aiData: {fileID: 7186964082461448909}
+  _hitAudio: {fileID: 8300000, guid: 196e0ba143b03474e95f63acb7f5a8d9, type: 3}
 --- !u!61 &7186964082461448904
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -403,6 +404,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 1
+  _damageAudio: {fileID: 8300000, guid: 25a445a8419fa1849a41d588d9c4dc95, type: 3}
+  _deathAudio: {fileID: 8300000, guid: ec812d9287c4eaa44a13398f2486e865, type: 3}
 --- !u!58 &1267740092952857385
 CircleCollider2D:
   m_ObjectHideFlags: 0

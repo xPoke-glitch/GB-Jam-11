@@ -612,6 +612,8 @@ MonoBehaviour:
   _initOnStart: 0
   _selectedColor: {r: 0.8745098, g: 0.96862745, b: 0.79607844, a: 1}
   _defaultColor: {r: 0.02745098, g: 0.09411765, b: 0.12941177, a: 1}
+  _btnChangeSound: {fileID: 8300000, guid: 83ef2a8e4333c8747ab071186586bf75, type: 3}
+  _btnEnterSound: {fileID: 8300000, guid: 04085c6a46954bc42852acac67353ab2, type: 3}
 --- !u!1 &1732350280
 GameObject:
   m_ObjectHideFlags: 0

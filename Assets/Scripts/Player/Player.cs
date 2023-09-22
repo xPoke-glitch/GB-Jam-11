@@ -8,12 +8,16 @@ public class Player : Actor
 
     [SerializeField]
     private SpriteRenderer _playerSprite;
-
-
+    [SerializeField] 
+    private AudioClip _damageAudio;
+    [SerializeField] 
+    private AudioClip _deathAudio;
+    
     private bool _canTakeDamage = true;
 
     public override void Die()
     {
+        AudioManager.Instance.PlayAudioEffect(_deathAudio);
         GameManager.Instance.GameOver(true);
         Destroy(gameObject);
     }
@@ -30,6 +34,7 @@ public class Player : Actor
         {
             // Hardcoded 1 damage
             TakeDamage(1);
+            AudioManager.Instance.PlayAudioEffect(_damageAudio);
         }
     }
 

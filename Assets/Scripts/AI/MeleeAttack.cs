@@ -8,6 +8,10 @@ public class MeleeAttack : MonoBehaviour
     [Header("References")]
     [SerializeField] private AIData _aiData;
 
+    [Header("Sound Settings")]
+    [SerializeField]
+    private AudioClip _hitAudio;
+    
     private bool _canDealDamage = false;
     
     public void Attack()
@@ -16,6 +20,7 @@ public class MeleeAttack : MonoBehaviour
             return;
 
         Player p = _aiData.currentTarget.GetComponent<Player>();
+        AudioManager.Instance.PlayAudioEffect(_hitAudio);
         p.TakeDamage(1);
         _canDealDamage = false;
         Debug.Log("Melee");

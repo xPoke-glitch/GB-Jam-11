@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
@@ -17,6 +18,10 @@ public class PlayerShoot : MonoBehaviour
     [SerializeField]
     private float _bulletSpeed;
 
+    [Header("Sound Settings")]
+    [SerializeField]
+    private List<AudioClip> _shotAudio;
+    
     private bool _canShoot = true;
     private ObjectPool<Bullet> bulletPool;
 
@@ -40,7 +45,8 @@ public class PlayerShoot : MonoBehaviour
             _canShoot = false;
 
             bulletPool.GetObject().Shoot(transform.position, _playerMovements.LastPlayerDirection, _bulletSpeed, bulletPool);
-
+            AudioManager.Instance.PlayAudioEffect(_shotAudio[Random.Range(0, _shotAudio.Count)]);
+            
             StartCoroutine(COShootTimer());
         }
     }

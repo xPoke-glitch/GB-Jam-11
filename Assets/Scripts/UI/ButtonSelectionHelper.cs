@@ -18,6 +18,12 @@ public class ButtonSelectionHelper : MonoBehaviour
     [SerializeField] 
     private Color _defaultColor = Color.white;
 
+    [Header("Sounds Settings")] 
+    [SerializeField]
+    private AudioClip _btnChangeSound;
+    [SerializeField]
+    private AudioClip _btnEnterSound;
+
     private List<TextMeshProUGUI> _tmProList = new List<TextMeshProUGUI>();
     private Button _selectedButton;
     private int _curIndex = 0;
@@ -65,6 +71,7 @@ public class ButtonSelectionHelper : MonoBehaviour
         // Click on current button
         if (Input.GetKeyDown(KeyCode.K) || Input.GetKeyDown(KeyCode.L))
         {
+            AudioManager.Instance.PlayAudioEffect(_btnEnterSound);
             _selectedButton.onClick?.Invoke();
         }
     }
@@ -75,6 +82,8 @@ public class ButtonSelectionHelper : MonoBehaviour
         {
             t.color = _defaultColor;
         }
+        
+        AudioManager.Instance.PlayAudioEffect(_btnChangeSound);
 
         if(_tmProList != null && _tmProList.Count > _curIndex)
             _tmProList[_curIndex].color = _selectedColor;
