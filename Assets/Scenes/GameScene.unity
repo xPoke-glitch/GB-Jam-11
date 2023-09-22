@@ -1834,6 +1834,7 @@ MonoBehaviour:
   _health: 5
   _playerSprite: {fileID: 1082890068}
   _damageAudio: {fileID: 8300000, guid: 25a445a8419fa1849a41d588d9c4dc95, type: 3}
+  _deathAudio: {fileID: 8300000, guid: 80c22574181501f46bc10d7e18ae2ee8, type: 3}
 --- !u!114 &1082890065
 MonoBehaviour:
   m_ObjectHideFlags: 0
