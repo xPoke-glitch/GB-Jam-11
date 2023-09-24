@@ -13,6 +13,8 @@ public class UIGameOver : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _description;
     [SerializeField] private GameObject _winBackground;
     [SerializeField] private GameObject _loseBackground;
+    [SerializeField] private GameObject _ship;
+    [SerializeField] private GameObject _shipDest;
     [SerializeField] private AudioClip _bgLoseMusic;
     [SerializeField] private AudioClip _bgWinIntroMusic;
     [SerializeField] private AudioClip _bgWinMusic;
@@ -46,6 +48,7 @@ public class UIGameOver : MonoBehaviour
             gameObject.SetActive(true);
         FadePanel.Instance.FadeOut();
         SetupAudio(_isWin);
+        LeanTween.move(_ship, _shipDest.transform.position, 20f);
     }
 
     private void HidePage() => gameObject.SetActive(false);
