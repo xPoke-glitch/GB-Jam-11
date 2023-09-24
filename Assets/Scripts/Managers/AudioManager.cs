@@ -16,6 +16,7 @@ public class AudioManager : Singleton<AudioManager>
         if (!_bgMusicSource)
             return;
 
+        _bgMusicSource.volume /= 2f;
         _bgMusicSource.clip = audioClipToPlay;
         _bgMusicSource.loop = isLooped;
         _bgMusicSource.Play();

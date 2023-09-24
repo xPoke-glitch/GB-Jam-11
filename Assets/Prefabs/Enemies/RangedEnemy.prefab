@@ -391,8 +391,7 @@ MonoBehaviour:
   _bulletSpeed: 10
   aiData: {fileID: 6531065766779408669}
   _shotAudio:
-  - {fileID: 8300000, guid: 9179bbf16f703714ab2f11dceddc9b2e, type: 3}
-  - {fileID: 8300000, guid: 0f5d5bfa05e18024bb85c0b2b7f99a67, type: 3}
+  - {fileID: 8300000, guid: a5aabc6b2923df04081041c6ec07d441, type: 3}
 --- !u!114 &5863807294155879423
 MonoBehaviour:
   m_ObjectHideFlags: 0
