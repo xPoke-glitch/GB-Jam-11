@@ -34,11 +34,17 @@ public class PlayerMovements : MonoBehaviour
         Debug.DrawRay(transform.position, transform.TransformDirection(movement) * _rayDistance, Color.red);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.TransformDirection(movement), _rayDistance,_movementMask);
 
-        _playerAnimator.SetFloat(X, movement.x);
-        _playerAnimator.SetFloat(Y, movement.y);
+        
         
         if (movement == Vector3.zero || hit)
+        {
+            _playerAnimator.SetTrigger("IdleBot");
             return;
+        }
+
+        _playerAnimator.SetTrigger("Run");
+        _playerAnimator.SetFloat(X, movement.x);
+        _playerAnimator.SetFloat(Y, movement.y);
 
         _lastDirection = movement;
 

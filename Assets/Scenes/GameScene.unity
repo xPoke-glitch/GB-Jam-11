@@ -1831,7 +1831,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73326480889978139, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 73326480889978140, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_Pivot.x
@@ -1919,35 +1919,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 73326480926728708, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326480926728708, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326480926728708, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 320
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326480926728708, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -37.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326481652402817, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326481652402817, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326481652402817, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 320
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 73326481652402817, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -112.5
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51dc3632a13836a43ac324fbe7541073, type: 3}
@@ -16527,7 +16527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1913760912
 MonoBehaviour:
   m_ObjectHideFlags: 0

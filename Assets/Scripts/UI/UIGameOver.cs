@@ -11,10 +11,19 @@ public class UIGameOver : MonoBehaviour
     [Header("References")] 
     [SerializeField] private TextMeshProUGUI _peopleCounter;
     [SerializeField] private TextMeshProUGUI _description;
+    [SerializeField] private GameObject _winBackground;
+    [SerializeField] private GameObject _loseBackground;
+    [SerializeField] private AudioClip _bgLoseMusic;
+    [SerializeField] private AudioClip _bgWinIntroMusic;
+    [SerializeField] private AudioClip _bgWinMusic;
+
+
     private PeopleManager _peopleManager => PeopleManager.Instance;
     private bool _isWin = false;
     private void Awake()
     {
+        _winBackground.SetActive(false);
+        _loseBackground.SetActive(false);
         GameManager.OnGameOver += InitShow;
         HidePage();
     }
@@ -33,11 +42,12 @@ public class UIGameOver : MonoBehaviour
 
     private void ShowPage()
     {
-        if(gameObject)
+        if (gameObject)
             gameObject.SetActive(true);
         FadePanel.Instance.FadeOut();
+        SetupAudio(_isWin);
     }
-    
+
     private void HidePage() => gameObject.SetActive(false);
 
     private void SetupPage()
@@ -48,8 +58,20 @@ public class UIGameOver : MonoBehaviour
         SetupDescription(_isWin);
     }
 
+    private void SetupAudio(bool isWin)
+    {
+        if(!isWin)
+            AudioManager.Instance.PlayGameBackgroundMusic(_bgLoseMusic, true);
+        else
+        {
+            AudioManager.Instance.PlayGameBackgroundMusic(_bgWinIntroMusic, false);
+            StartCoroutine(COWaitForSecondAudio());
+        }
+    }
+
     private void SetupDescription(bool isWin)
     {
+        
         if (_peopleManager.PeopleRescued == 0)
             _description.text = "You saved no one!\nTry again";
         else if (!isWin && _peopleManager.PeopleRescued >= _peopleManager.PeopleCount)
@@ -58,6 +80,9 @@ public class UIGameOver : MonoBehaviour
             _description.text = "You forgot someone!\nTry again";
         else
             _description.text = "Congratulation!\nYou Won!";
+
+        _winBackground.SetActive(isWin);
+        _loseBackground.SetActive(!isWin);
     }
     
     #region Button Signals
@@ -83,5 +108,10 @@ public class UIGameOver : MonoBehaviour
     
     #endregion
     
-    
+    private IEnumerator COWaitForSecondAudio()
+    {
+        yield return new WaitForSeconds(_bgWinIntroMusic.length);
+
+        AudioManager.Instance.PlayGameBackgroundMusic(_bgWinMusic, true);
+    }
 }

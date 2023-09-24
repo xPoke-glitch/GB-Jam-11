@@ -10,7 +10,9 @@ public class AudioManager : Singleton<AudioManager>
 
     public void PlayGameBackgroundMusic(AudioClip audioClipToPlay, bool isLooped = false)
     {
-        _bgMusicSource = FindFirstEmpty();
+        if(_bgMusicSource == null)
+            _bgMusicSource = FindFirstEmpty();
+
         if (!_bgMusicSource)
             return;
 
