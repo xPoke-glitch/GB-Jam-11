@@ -38,7 +38,7 @@ public class PlayerMovements : MonoBehaviour
         
         if (movement == Vector3.zero || hit)
         {
-            _playerAnimator.SetTrigger("IdleBot");
+            _playerAnimator.SetTrigger("Idle");
             return;
         }
 
