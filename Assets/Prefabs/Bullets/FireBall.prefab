@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: -3107875711063877986}
   - component: {fileID: 932529043526401684}
   - component: {fileID: 7797668732587961671}
-  - component: {fileID: 2209643283995002507}
+  - component: {fileID: 5163123408387880351}
   m_Layer: 0
   m_Name: FireBall
   m_TagString: Untagged
@@ -148,18 +148,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.7686776}
   m_EdgeRadius: 0
---- !u!111 &2209643283995002507
-Animation:
+--- !u!95 &5163123408387880351
+Animator:
+  serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3358655423542132293}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: 949557d06a4e31a4da484c6b6cb77b35, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0555e16dc935bfc42969a7a1695b8ca3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

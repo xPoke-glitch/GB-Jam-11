@@ -10,13 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 13b75c95f34a00d4e8c04f76b73312e6, type: 3}
-  m_Name: TestTileAnimated
+  m_Name: TileFire
   m_EditorClassIdentifier: 
   m_AnimatedSprites:
   - {fileID: -836775973, guid: e728725abdcbb0d458b2e0b0343c878c, type: 3}
-  - {fileID: 0}
-  m_MinSpeed: 2
-  m_MaxSpeed: 2
+  - {fileID: 1100085506, guid: e728725abdcbb0d458b2e0b0343c878c, type: 3}
+  - {fileID: -625763678, guid: e728725abdcbb0d458b2e0b0343c878c, type: 3}
+  - {fileID: -263526395, guid: e728725abdcbb0d458b2e0b0343c878c, type: 3}
+  m_MinSpeed: 6
+  m_MaxSpeed: 6
   m_AnimationStartTime: 0
   m_AnimationStartFrame: 0
   m_TileColliderType: 0

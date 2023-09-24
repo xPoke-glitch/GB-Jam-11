@@ -207,7 +207,7 @@ MonoBehaviour:
   _collisionTilemap: {fileID: 1185156197}
   _baseTilemap: {fileID: 1064168987}
   _tileWarning: {fileID: 11400000, guid: 3ddfcd6e7e9115442aae64e020bb6d8a, type: 2}
-  _tile: {fileID: 11400000, guid: c217b70e7fdbd304abb4e0ec1f8b6387, type: 2}
+  _tile: {fileID: 11400000, guid: f7396c4f5c6b2544f825c1aa80a30fd6, type: 2}
 --- !u!4 &8483173
 Transform:
   m_ObjectHideFlags: 0
