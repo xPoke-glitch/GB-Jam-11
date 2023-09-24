@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovements : MonoBehaviour
@@ -6,7 +7,9 @@ public class PlayerMovements : MonoBehaviour
 
     [Header("References")]
     [SerializeField]
-    private Animator _playerAnimator = null; 
+    private Animator _playerAnimator = null;
+    [SerializeField]
+    private List<AudioClip> _stepsAudio = new List<AudioClip>();
     
     
     [Header("Settings")]
@@ -48,7 +51,12 @@ public class PlayerMovements : MonoBehaviour
 
         _lastDirection = movement;
 
+        AudioManager.Instance.PlayAudioEffect(_stepsAudio[Random.Range(0, _stepsAudio.Count)]);
+
         _canMove = false;
-        LeanTween.move(this.gameObject, this.gameObject.transform.position + movement, _moveTime).setOnComplete(() => { _canMove = true; });
+        LeanTween.move(this.gameObject, this.gameObject.transform.position + movement, _moveTime).setOnComplete(() => {
+            
+            _canMove = true; 
+        });
     }
 }

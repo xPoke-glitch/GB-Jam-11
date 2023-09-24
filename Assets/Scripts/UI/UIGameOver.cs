@@ -48,7 +48,8 @@ public class UIGameOver : MonoBehaviour
             gameObject.SetActive(true);
         FadePanel.Instance.FadeOut();
         SetupAudio(_isWin);
-        LeanTween.move(_ship, _shipDest.transform.position, 20f);
+        if(_isWin)
+            LeanTween.move(_ship, _shipDest.transform.position, 20f);
     }
 
     private void HidePage() => gameObject.SetActive(false);
