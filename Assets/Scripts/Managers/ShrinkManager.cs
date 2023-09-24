@@ -19,7 +19,7 @@ public class ShrinkManager : Singleton<ShrinkManager>
 
     public void StartManager()
     {
-        InvokeRepeating("Shrink", 30, 30);
+        InvokeRepeating("Shrink", 2, 2);
     }
 
     private void Shrink()
