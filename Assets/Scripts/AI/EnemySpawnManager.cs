@@ -99,15 +99,13 @@ public class EnemySpawnManager : Singleton<EnemySpawnManager>
             return;
 
         int randIndex = UnityEngine.Random.Range(0,freeTiles.Count);
-        if (UnityEngine.Random.Range(0, 2) == 0)
-            _meleePool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _meleePool);
-        else
-            _rangedPool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _rangedPool);
+
+        _rangedPool.GetObject().SetupEnemy(new Vector3(freeTiles[randIndex].x + 0.5f, freeTiles[randIndex].y + 0.5f, freeTiles[randIndex].z), Quaternion.identity, _rangedPool);
     }
 
     private Enemy RangedEnemyFactory()
     {
-        return Instantiate(_enemies[1], _rangedEnemyParent).GetComponent<Enemy>();
+        return Instantiate(_enemies[0], _rangedEnemyParent).GetComponent<Enemy>();
     }
 
     private Enemy MeleeEnemyFactory()

@@ -10,6 +10,11 @@ public class EnemyMovments : MonoBehaviour
     private float _moveTime = 0.1f;
     [SerializeField]
     private LayerMask _obstaclesMask;
+    [Space(20)]
+    [SerializeField]
+    private Animator _animator;
+    [SerializeField]
+    private SpriteRenderer _spriteRenderer;
 
     private bool _isMoving = false;
 
@@ -20,7 +25,21 @@ public class EnemyMovments : MonoBehaviour
         direction = new Vector2(Mathf.RoundToInt(direction.x), Mathf.RoundToInt(direction.y));
         if(!CanMove(direction))
             return;
+
         _isMoving = true;
+
+        _animator.SetFloat("X", direction.x);
+        _animator.SetFloat("Y", direction.y);
+
+        _spriteRenderer.flipX = false;
+
+        if (direction == Vector2.left)
+            _spriteRenderer.flipX = true;
+        if (direction == new Vector2(-1, 1))
+            _spriteRenderer.flipX = true;
+        if (direction == new Vector2(-1, -1))
+            _spriteRenderer.flipX = true;
+
         LeanTween.move(this.gameObject, this.gameObject.transform.position + new Vector3(direction.x,direction.y,transform.position.z), _moveTime).setOnComplete(() => { _isMoving = false; });
     }
 

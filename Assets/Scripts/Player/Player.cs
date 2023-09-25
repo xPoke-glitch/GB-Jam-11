@@ -25,7 +25,7 @@ public class Player : Actor
     private void Start()
     {
         _canTakeDamage = true;
-        OnHealthInit.Invoke(Health);
+        OnHealthInit?.Invoke(Health);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -63,7 +63,7 @@ public class Player : Actor
 
     public void UpdateHealth()
     {
-        OnDamageTaken.Invoke(Health);
+        OnDamageTaken?.Invoke(Health);
     }
 
     private void OnEnable()

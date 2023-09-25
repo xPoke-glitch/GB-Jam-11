@@ -144,6 +144,7 @@ GameObject:
   - component: {fileID: 6531065766779408665}
   - component: {fileID: 6531065766779408666}
   - component: {fileID: 5863807294155879423}
+  - component: {fileID: -303303662843731385}
   m_Layer: 8
   m_Name: RangedEnemy
   m_TagString: Untagged
@@ -209,9 +210,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.8396226, g: 0.34456214, b: 0.34456214, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 1417149306, guid: c24228ff4f7d7e846b536906e448423c, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -346,10 +347,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16d85dd3d76a55c46b35a93f595fb6ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _moveTime: 0.4
+  _moveTime: 0.6
   _obstaclesMask:
     serializedVersion: 2
     m_Bits: 128
+  _animator: {fileID: -303303662843731385}
+  _spriteRenderer: {fileID: 6531065766779408659}
 --- !u!61 &6531065766779408665
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -388,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d58fd872ba62bf42816f80a80977890, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletSpeed: 10
+  _bulletSpeed: 5
   aiData: {fileID: 6531065766779408669}
   _shotAudio:
   - {fileID: 8300000, guid: a5aabc6b2923df04081041c6ec07d441, type: 3}
@@ -407,6 +410,26 @@ MonoBehaviour:
   _health: 1
   _damageAudio: {fileID: 8300000, guid: 25a445a8419fa1849a41d588d9c4dc95, type: 3}
   _deathAudio: {fileID: 8300000, guid: ec812d9287c4eaa44a13398f2486e865, type: 3}
+--- !u!95 &-303303662843731385
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6531065766779408667}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 912a4f1fdf393814e8e856e4de298373, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &6531065767427352395
 GameObject:
   m_ObjectHideFlags: 0

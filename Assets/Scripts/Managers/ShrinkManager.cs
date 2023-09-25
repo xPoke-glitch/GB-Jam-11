@@ -29,9 +29,9 @@ public class ShrinkManager : Singleton<ShrinkManager>
             Vector3Int localPlace = new Vector3Int(pos.x, pos.y, pos.z);
             Vector3 place = _collisionTilemap.CellToWorld(localPlace);
             if ((pos.x == _collisionTilemap.cellBounds.xMin + _xShrinkIndex) ||
-                (pos.x == _collisionTilemap.cellBounds.xMax - _xShrinkIndex-1) ||
+                (pos.x == _collisionTilemap.cellBounds.xMax - _xShrinkIndex - 1) ||
                 (pos.y == _collisionTilemap.cellBounds.yMin + _yShrinkIndex) ||
-                (pos.y == _collisionTilemap.cellBounds.yMax - _yShrinkIndex-1)
+                (pos.y == _collisionTilemap.cellBounds.yMax - _yShrinkIndex - 1)
                 )
             {
                 // Show warning tile
